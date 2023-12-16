@@ -1,0 +1,127 @@
+{
+	"layer": "top", // set Waybar at top layer
+	// "position": "top", // Waybar position (top|bottom|left|right)
+	"height": 36, // Waybar height (to be removed for auto height)
+	// "width": 1280, // Waybar width
+	"spacing": 4, // Gaps between modules (4px)
+	// Choose the order of the modules
+	"modules-left": [
+		"sway/workspaces"
+	],
+	"modules-center": [
+		"sway/window"
+	],
+	"modules-right": [
+		"network",
+		"pulseaudio",
+		"backlight",
+		"battery",
+		"clock",
+		"tray",
+		"custom/power"
+	],
+	// Modules configuration
+	"sway/workspaces": {
+		"format": "{icon}",
+		"persistent-workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": []
+		},
+		"format-icons": {
+			"1": "󰋜",
+			"2": "󰖟",
+			"3": "󰠮",
+			"4": "󰭹",
+			"5": "󱓷",
+			"6": "󱇧",
+			"7": "󰊢",
+			"8": "󰖲",
+			"9": "󰕧",
+			"10": "󰝚",
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+	},
+	"tray": {
+		"spacing": 5
+	},
+	"custom/date": {
+		"format": "󰸗 {}",
+		"interval": 3600,
+		"exec": "$bin/waybar-date.sh"
+	},
+	"custom/power": {
+		"format": "󰐥",
+		"on-click": "$bin/waybar-power.sh",
+		"tooltip": false
+	},
+	"clock": {
+		"format": "󰅐 {:%H:%M}",
+		"tooltip-format": "<big>{:W%w %d}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}"
+	},
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "󰂄 {capacity}%",
+		"format-plugged": "󰂄{capacity}%",
+		"format-alt": "{time} {icon}",
+		"format-full": "󱈑 {capacity}%",
+		"format-icons": [
+			"󱊡",
+			"󱊢",
+			"󱊣"
+		]
+	},
+	"network": {
+		"format-wifi": "  {essid}",
+		"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "󰤮 Disconnected",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+	},
+	"pulseaudio": {
+		"scroll-step": 1, // %, can be a float
+		"format": "{icon} {volume}%",
+		"format-bluetooth": "{icon} {volume}%{format_source}",
+		"format-bluetooth-muted": " {icon}",
+		"format-muted": " {icon}",
+		"format-source": " {volume}%",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
+		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+	},
+	"backlight": {
+		// "device": "acpi_video1",
+		"format": "{icon} {percent}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	}
+}
