@@ -153,7 +153,7 @@ exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id nitrogen --restore
 
 # Input Method
-exec_always --no-startup-id fcitx5
+exec_always --no-startup-id fcitx5 -d --replace
 
 # Other
 exec_always --no-startup-id redshift-gtk
@@ -199,8 +199,8 @@ bindsym $mod+Shift+q kill
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id wofi --show drun --term kitty
-bindsym $mod+Tab exec --no-startup-id rofi -show window -terminal alacritty
-bindsym Ctrl+Shift+s exec --no-startup-id rofi -show ssh -terminal alacritty
+bindsym $mod+Tab exec --no-startup-id wofi --show window --term kitty
+bindsym Ctrl+Shift+s exec --no-startup-id wofi --show ssh --term kitty
 
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -213,7 +213,7 @@ bindsym $mod+p --release exec --no-startup-id flameshot screen
 bindsym $mod+Shift+p --release exec --no-startup-id flameshot gui
 
 # LockScreen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+9 exec --no-startup-id swaylock
 
 # change focus
 bindsym $mod+j focus left
@@ -366,7 +366,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+# bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"

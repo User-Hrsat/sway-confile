@@ -8,9 +8,9 @@
 	"modules-left": [
 		"sway/workspaces"
 	],
-	"modules-center": [
-		"sway/window"
-	],
+	// "modules-center": [
+	// 	// "sway/window"
+	// ],
 	"modules-right": [
 		"network",
 		"pulseaudio",
@@ -51,11 +51,11 @@
 	"custom/date": {
 		"format": "󰸗 {}",
 		"interval": 3600,
-		"exec": "$bin/waybar-date.sh"
+		// "exec": "~/.sway/waybar/bin/waybar-date.sh"
 	},
 	"custom/power": {
 		"format": "󰐥",
-		"on-click": "$bin/waybar-power.sh",
+		"on-click": "~/.sway/waybar/bin/waybar-power.sh",
 		"tooltip": false
 	},
 	"clock": {
